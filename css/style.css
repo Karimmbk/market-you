@@ -82,7 +82,7 @@ box-sizing: border-box;
 /* ---------------------Geral------------------ */
 
 body {
-  background: url(/img/bg.png) no-repeat;
+  background: url(../img/bg.png) no-repeat;
   background-size: cover;
 }
 
