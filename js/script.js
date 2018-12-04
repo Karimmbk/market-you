@@ -41,3 +41,11 @@ $(function () {
     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height()); // add e removendo a classe scrolled conforme o calculo em relacao ao topo e ao tamanho do menu
   });
 });
+
+
+// funcao para abrir e fechar menu hamburguer
+
+$('.mobile-btn').on('click', function() {
+  $(this).toggleClass('active');
+  $('.mobile-menu').toggleClass('active');
+});

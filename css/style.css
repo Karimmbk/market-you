@@ -75,7 +75,7 @@ table {
 	border-spacing: 0;
 }
 
-* {
+*, *::after, *::before {
 box-sizing: border-box;
 }
 
@@ -176,6 +176,7 @@ body {
 	background-color: #3480E3;
 	transition: all .3s ease;
 }
+
 
 
 /* ----------------Introduction----------------------- */
@@ -295,6 +296,13 @@ body {
 .flex {
 	display: flex;
 	flex-wrap: wrap; 
+	align-items: center;
+	justify-content: center;
+}
+
+.flex-reverse {
+	display: flex;
+	flex-wrap: wrap-reverse; 
 	align-items: center;
 	justify-content: center;
 }
@@ -448,3 +456,158 @@ body {
 	color: #E53167;
 	transition: all .5s ease;
 }
+
+
+@media only screen and (max-width: 768px) {
+	
+	.container {
+    max-width: 480px;
+    padding-left: 10px;
+    padding-right: 10px;
+	}
+	
+	.navbar-fixed-top {
+		background: white;
+	}
+
+	/* começo icone menu hamburguer */
+	.mobile-btn {
+		display: block;
+		width: 36px;
+		height: 36px;
+		color: #E53167;
+		margin: 10px 20px 0 0;
+		border-top: 4px solid;
+		float: left;
+		position: relative;
+		cursor: pointer;
+		z-index: 100;
+	}
+
+	.mobile-btn::after, .mobile-btn::before {
+		content: '';
+		display: block;
+		height: 4px;
+		margin-top: 6px;
+		background: currentColor;
+		position: relative;
+		transition: transform .2s ease; 
+		z-index: 100;
+	}
+
+	.mobile-btn.active {
+		border-top-color: transparent;
+		color: white;
+	}
+
+	.mobile-btn.active::after {
+		margin-top: 0px;
+		top: 2px;
+		transform: rotate(45deg); 
+	}
+
+	.mobile-btn.active::before {
+		margin-top: 0px;
+		top: 6px;
+		transform: rotate(135deg); 
+	}
+	/* fim icone menu hamburguer */
+
+	/* começo estilo para a lista do menu hamburguer */
+	.menu-nav.mobile-menu {
+		position: fixed;
+		background: #3480E3;
+		padding: 30px 20px;
+		right: 0px;
+		top: 0px;
+		border-radius: 100px 20px 50px 100px;
+		opacity: 0;
+		visibility: hidden;
+		transform: translate3d(60px, 0px, 0px);
+		transition: all .5s ease;
+	}
+
+	.menu-nav.mobile-menu.active {
+		opacity: 1;
+		visibility: visible;
+		transform: translate3d(0px, 0px, 0px);
+	}
+
+	.menu-nav.mobile-menu ul, .menu-nav.mobile-menu li {
+		display: block;
+	}
+
+	.menu-nav.mobile-menu ul:first-child {
+		margin-top: 70px; 
+	}
+
+	.menu-nav.mobile-menu a {
+		margin: 10px auto;
+		width: 100%;
+		text-align: center;
+		color: white;
+	}
+
+	.introduction{
+		margin: 0 auto;
+		max-width: 460px;
+	}
+	.intro-text h1 {
+		font-size: 36px !important;
+		text-align: center;
+	}
+
+	.intro-text p {
+		max-width: 360px;
+		text-align: center;
+		margin: 10px auto 20px;
+	}
+
+	.intro-text a {
+		margin-bottom: 40px; 
+		margin: 0 auto;
+		display: table;
+		margin-bottom: -30px; 
+	}
+
+	.intro-img {
+		display: none;
+	}
+
+	.plans {
+		padding-top: 0;
+		margin: 80px auto;
+	}
+
+	.learn-text {
+		margin-top: -20px; 
+	}
+
+	.learn-text h2, .sup-text h2 {
+		width: 320px;
+		font-size: 36px;
+		text-align: center;
+		margin: 0 auto;
+	}
+
+	.learn-text p, .sup-text p {
+		max-width: 360px;
+		text-align: center;
+		margin: 10px auto 30px;
+		font-size: 17px;
+		color: #223242;
+	}
+	.learn-text a, .sup-text a {
+		margin: 0 auto;
+		display: table;
+	}
+	.learn-img, .sup-img {
+		margin-top: 100px;
+	}
+
+	.mkt {
+		margin-bottom: 30px;
+	}
+}
+
+/* fim estilo para a lista do menu hamburguer */
