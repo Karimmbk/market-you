@@ -303,7 +303,6 @@ body {
 .flex-reverse {
 	display: flex;
 	flex-wrap: wrap-reverse; 
-	align-items: center;
 	justify-content: center;
 }
 
@@ -354,6 +353,10 @@ body {
 
 /*------------- Support---------*/
 
+.sup {
+	padding-top: 70px;
+	margin-top: 130px; 
+}
 .sup .flex {
 	align-items: flex-start;
 	padding-top: 100px; 
@@ -607,6 +610,11 @@ body {
 
 	.mkt {
 		margin-bottom: 30px;
+	}
+
+	.sup {
+		padding-top: 0px;
+		margin-top: 0px; 
 	}
 }
 
