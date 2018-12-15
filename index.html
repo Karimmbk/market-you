@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<head>
+	<head id="topofpage">
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Market You</title>
@@ -18,7 +18,7 @@
 			<div class="navbar-fixed-top">
 				<div class="menu container">
 					<div class="menu-logo">
-						<a href="#product">Market You</a>
+						<a href="#topofpage">Market You</a>
 					</div>
 					<span class="mobile-btn"></span>
 					<div class="menu-nav mobile-menu">
@@ -27,7 +27,7 @@
 							<li><a href="#discover">Discover</a></li>
 							<li><a href="#plataform">Plataform</a></li>
 							<li><a href="#support">Support</a></li>
-							<li><a href="#" class="log-in">Log in</a></li>
+							<li><a data-modal="abrir" href="" class="log-in">Log in</a></li>
 							<li><a href="#" class="sign-up">Sign Up</a></li>
 						</ul>
 					</div>
@@ -99,7 +99,7 @@
 		 <footer class="foo container">
 			<div class="flex">
 				<div class="mkt">
-					<a href="#">Market You</a>
+					<a href="#topofpage">Market You</a>
 					<p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
 					<p>©2018 MarketingYou Inc. All rights reserved</p>
 				</div>
@@ -134,6 +134,20 @@
 						</div>
 			</div>
 		</footer>
+
+		<!-- modal -->
+		<section class="modal-cotainer" data-modal="container">
+			<div class="modal">
+				<button class="fechar" data-modal="fechar">X</button>
+				<form action="">
+					<label for="email">Email</label>
+					<input type="text" for="email" id="email">
+					<label for="senha">Senha</label>
+					<input type="password" for="senha" id="senha">
+					<button type="submit">Entrar</button>
+				</form>
+			</div>
+		</section>
 
 		<!------------Scripts js-------------------->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

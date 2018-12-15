@@ -1,6 +1,5 @@
-
 // script para dar scroll suave quando clica na section no menu
-$('.menu a').on('click', function(e) { // nos elementos do menu quando clicar
+$('.menu a[href^="#"], .mkt a').on('click', function(e) { // nos elementos do menu quando clicar
   e.preventDefault(); // primeiro dar prevent default para tirar a acao q ja faz
   var id = $(this).attr('href'), // variavel para pegar o id no href do elemento clicado no menu
       menuHeight = $('.menu').innerHeight(), // calcular altura do menu e somar 20
@@ -49,3 +48,32 @@ $('.mobile-btn').on('click', function() {
   $(this).toggleClass('active');
   $('.mobile-menu').toggleClass('active');
 });
+
+
+// abrir modal
+
+const botaoAbrir = document.querySelector('[data-modal="abrir"]');
+// console.log(botaoAbrir);
+
+const botaoFechar = document.querySelector('[data-modal="fechar"]');
+// console.log(botaoFechar);
+
+const containerModal = document.querySelector('[data-modal="container"]');
+// console.log(containerModal);
+
+
+function toogleModal(e) {
+  e.preventDefault();
+  containerModal.classList.toggle('active');
+}
+
+function clickForaModal (e) {
+  e.preventDefault();
+  // console.log(this);
+  if(this === e.target)
+    toogleModal(e);
+}
+
+botaoAbrir.addEventListener('click', toogleModal);
+botaoFechar.addEventListener('click', toogleModal);
+containerModal.addEventListener('click', clickForaModal);
